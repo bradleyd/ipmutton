@@ -1,6 +1,6 @@
 # Ipmutton
 
-TODO: Write a gem description
+This is a simple wrapper for the `great` ipmutton website
 
 ## Installation
 
@@ -18,7 +18,14 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+require 'ipmutton'
+
+host_info = Ipmutton::HostInfo.new
+
+host_info.ip_address #=> "1.2.3.4"
+
+```
 
 ## Contributing
 
