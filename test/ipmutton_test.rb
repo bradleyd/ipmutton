@@ -22,4 +22,11 @@ class IpmuttonTest < MiniTest::Unit::TestCase
     assert_respond_to(@ipmutton, :user_agent)
   end
 
+  def test_ip_address_not_nil
+    refute_nil(@ipmutton.ip_address)
+  end
+
+  def test_user_agent_not_nil
+    refute_nil(@ipmutton.user_agent)  
+  end
 end
