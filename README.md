@@ -24,6 +24,13 @@ require 'ipmutton'
 host_info = Ipmutton::HostInfo.new
 
 host_info.ip_address #=> "1.2.3.4"
+host_info.user_agent #=> "ruby"
+host_info.port #=> "55555"
+host_info.reverse_dns #=> "pool-1.2.3.4.tampfl.fios.verizon.net"
+host_info.accept #=> "*/*; q=0.5, application/xml"
+host_info.accept_encoding #=> "gzip, deflate"
+host_info.content_type #=> ""
+host_info.content_length #=> "" 
 
 ```
 
