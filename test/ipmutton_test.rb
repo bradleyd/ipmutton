@@ -29,4 +29,8 @@ class IpmuttonTest < MiniTest::Unit::TestCase
   def test_user_agent_not_nil
     refute_nil(@ipmutton.user_agent)  
   end
+
+  def test_should_print_out_host_hash_meta
+    assert_kind_of(Hash, @ipmutton.inspect)
+  end
 end

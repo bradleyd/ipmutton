@@ -7,7 +7,7 @@ module Ipmutton
     # @todo needs some error handling
   class HttpService
     def initialize(opts={})
-      @remote_ip_address = "http://ipmutton.com/text"
+      @remote_ip_address = opts.fetch(:remote_ip) { "http://ipmutton.com/text" }
     end
 
     # @return [Hash] of meta-data from ipmutton's site
@@ -18,7 +18,15 @@ module Ipmutton
     #    :accept_encoding=>"gzip, deflate", :user_agent=>"Ruby", 
     #    :content_type=>"", :content_length=>""} 
     def fetch_data
-      clean_up_data(RestClient.get(@remote_ip_address))
+      clean_up_data(mutton_get)
+    end
+
+    # @todo needs error handling
+    def mutton_get
+      RestClient::Request.execute(:method => :get, 
+                                  :url => @remote_ip_address, 
+                                  :timeout => 5, 
+                                  :open_timeout => 5)
     end
 
     private

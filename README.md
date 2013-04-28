@@ -1,6 +1,8 @@
 # Ipmutton
 
-This is a simple wrapper for the `great` ipmutton website
+This is a simple wrapper for the `great` [ipmutton](http://ipmutton.com) website
+
+* Thanks Sumit!
 
 ## Installation
 
@@ -18,11 +20,16 @@ Or install it yourself as:
 
 ## Usage
 
+If you want to see the returned results you can call inspect on ipmutton instance.
+
 ```ruby
 require 'ipmutton'
 
 host_info = Ipmutton::HostInfo.new
 
+host_info.inspect #=> {:ip_address=>"1.2.3.4", :port=>"39961", :reverse_dns=>"pool-1.2.3.4.tampfl.fios.verizon.net", :accept=>"*/*; q=0.5, application/xml", :accept_encoding=>"gzip, deflate", :user_agent=>"Ruby", :content_type=>"", :content_length=>""}
+
+# or view them indiviually
 host_info.ip_address #=> "1.2.3.4"
 host_info.user_agent #=> "ruby"
 host_info.port #=> "55555"
@@ -33,6 +40,7 @@ host_info.content_type #=> ""
 host_info.content_length #=> "" 
 
 ```
+
 
 ## Contributing
 
